@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generated Images</title>
+</head>
+<body>
+    <h1>Generated Images</h1>
+    {% for image in images %}
+        <div>
+            <h2>{{ image.prompt }}</h2>
+            <img src="{{ image.image.url }}" alt="{{ image.prompt }}" style="max-width: 300px;">
+            <p>Generated at: {{ image.created_at }}</p>
+            <a href="{% url 'image_detail' image.id %}">View Details</a>
+        </div>
+        <hr>
+    {% empty %}
+        <p>No images have been generated yet.</p>
+    {% endfor %}
+    <br>
+    <a href="{% url 'generate_images' %}">Generate New Image</a>
+</body>
+</html>
