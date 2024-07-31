@@ -52,7 +52,7 @@ Start the development server:
 python manage.py runserver
 ```
 
-### 6. Run the Development Server
+### 6.  Start the Celery Worker
 
 Open a new terminal window, navigate to the project directory, and start the Celery worker:
 
